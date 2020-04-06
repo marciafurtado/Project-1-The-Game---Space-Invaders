@@ -18,7 +18,7 @@ class Player {
 
         for(let i = 0; i < this.shootArray.length; i++){
             image(this.shootImg, this.shootArray[i].shootPosX, this.shootArray[i].shootPosY);
-            this.shootArray[i].move();
+            this.shootArray[i].shootMove();
         }
     }
 
@@ -32,6 +32,15 @@ class Player {
 
     shootAction() {
         this.shootArray.push(new Shoot(this.posX + (this.sizeX / 2) - 5, this.posY));
+    }
+
+    movement(){
+        if(keyIsDown(39)){
+            this.moveRight();
+        }     
+        if(keyIsDown(37)){
+            this.moveLeft();
+        }
     }
     
 }

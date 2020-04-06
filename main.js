@@ -18,20 +18,20 @@ function setup() {
 
 function draw() {
     game.display();
+    
+    game.player.movement();
+    
+    if(frameCount % 60 == 0){
+        keyPressed();
+        }
+    
 }
 
 
 
 function keyPressed() {
-    console.log(keyPressed);
-    if(keyIsDown(39)){
-        game.player.moveRight();
-    }     
-    if(keyIsDown(37)){
-        game.player.moveLeft();
-    }
+    console.log(frameCount);    
     if(keyIsDown(32)){
         game.player.shootAction();
     }
-
 }
