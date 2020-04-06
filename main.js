@@ -26,10 +26,12 @@ function keyPressed() {
     console.log(keyPressed);
     if(keyIsDown(39)){
         game.player.moveRight();
-    } 
-    
+    }     
     if(keyIsDown(37)){
         game.player.moveLeft();
+    }
+    if(keyIsDown(32)){
+        game.player.shootAction();
     }
 
 }
