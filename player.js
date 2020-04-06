@@ -30,7 +30,7 @@ class Player {
         this.posX -= 10;
     }
 
-    shootAction() {
+    shootAction(){
         this.shootArray.push(new Shoot(this.posX + (this.sizeX / 2) - 5, this.posY));
     }
 
