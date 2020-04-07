@@ -1,9 +1,9 @@
 class Player {
 
     constructor(config){
-        this.playerImg = loadImage('./imgElem/player.png');
-        this.playerRightImg = loadImage('./imgElem/playerRight.png');
-        this.playerLeftImg = loadImage('./imgElem/playerLeft.png');
+        this.img = loadImage('./imgElem/player.png');
+        this.rightImg = loadImage('./imgElem/playerRight.png');
+        this.leftImg = loadImage('./imgElem/playerLeft.png');
         this.shootImg = loadImage('./imgElem/laserRed.png');
         this.speedImg = loadImage('./imgElem/speedLine.png');
 
@@ -14,22 +14,19 @@ class Player {
         
         this.shootArray = [];
 
-        this.ammo = 80;
-
+        this.ammo = 70;
     }
 
     display(){
-        image(this.playerImg, this.posX, this.posY);
+        image(this.img, this.posX, this.posY);
         image(this.speedImg, this.posX + 47, this.posY + 80, 7, 40);
        
-
         if(keyIsDown(39)){
-            image(this.playerRightImg, this.posX, this.posY);
+            image(this.rightImg, this.posX, this.posY);
         }
         if(keyIsDown(37)){
-            image(this.playerLeftImg, this.posX, this.posY);
+            image(this.leftImg, this.posX, this.posY);
         }
-
 
         for(let i = 0; i < this.shootArray.length; i++){
             image(this.shootImg, this.shootArray[i].shootPosX, this.shootArray[i].shootPosY, this.shootArray[i].width, this.shootArray[i].heigth);
@@ -46,11 +43,12 @@ class Player {
     }
 
     shootAction(){
+
         if(this.ammo > 0){
         this.shootArray.push(new Shoot(this.posX + (this.sizeX / 2) - 5, this.posY));
         this.ammo -= 1;
         console.log(this.ammo);
-        } else if (this.ammo <= 0){
+            } else if (this.ammo <= 0){
             return 'Out of ammo!';
         }
     }

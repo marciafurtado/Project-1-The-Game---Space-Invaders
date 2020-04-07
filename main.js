@@ -1,5 +1,5 @@
 let game = new Game();
-
+let startScreen = false;
 
 const config = {
     maxWidth: 1000,
@@ -11,14 +11,9 @@ function preload() {
     game.init(config);
 }
 
-
 function setup() {
     createCanvas(config.maxWidth,config.maxHeight);
-    
 }
-
-let startScreen = false;
-
 
 function draw() {
 
@@ -29,8 +24,7 @@ function draw() {
     game.display();
     game.player.movement();
     game.displayAliens();
-
-    
+    game.alienMovimentation();
 
     if(frameCount % 120 == 0){
         keyPressed();
@@ -40,7 +34,6 @@ function draw() {
     game.checkCollision();
     }
 }
-
 
 
 function keyPressed() {   

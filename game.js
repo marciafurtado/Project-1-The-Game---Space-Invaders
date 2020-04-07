@@ -1,6 +1,7 @@
 class Game {
     constructor(){
         this.alienArray = [];
+        this.alienSpeed = 3;
     }
 
     init(config){
@@ -78,25 +79,35 @@ class Game {
         clear();
         this.background.display();
         this.player.display();
-       
     }
 
     displayAliens(){
         for(let i = 0; i < this.alienArray.length; i++){
             this.alienArray[i].drawAlien();
+            console.log([i]);
+        }    
+    }
+
+    alienMovimentation(){
+        for(let i = 0; i < this.alienArray.length; i++){
+            this.alienArray[i].moveAlien();
+            // if(this.alienArray.length < 55){
+            //     this.alienArray[i].velocity += 1;
+            // }
         }
     }
 
     checkCollision(){    
         for(let i = 0; i < this.player.shootArray.length;i++){
             let laser = this.player.shootArray[i];            
+            
             for(let j = 0; j < this.alienArray.length; j++){
                 let alien = this.alienArray[j];
-                if(alien.alienPosX < laser.shootPosX + laser.width &&
-                    alien.alienPosX + alien.width > laser.shootPosX &&
-                    alien.alienPosY + alien.height > laser.shootPosY &&
-                    alien.alienPosY < laser.shootPosY + laser.height){
-                        console.log('aaaa');
+                
+                if(alien.posX < laser.shootPosX + laser.width &&
+                    alien.posX + alien.width > laser.shootPosX &&
+                    alien.posY + alien.height > laser.shootPosY &&
+                    alien.posY < laser.shootPosY + laser.height){
                         let index = this.alienArray.indexOf(alien);
                         this.alienArray.splice(index, 1);
                         let laserIndex = this.player.shootArray.indexOf(laser);
