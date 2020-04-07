@@ -17,17 +17,28 @@ function setup() {
     
 }
 
+let startScreen = false;
+
 
 function draw() {
+
+    if(startScreen){ 
+        // insert start screen
+        return;
+    }
     game.display();
     game.player.movement();
     game.displayAliens();
+
     
 
-    if(frameCount % 60 == 0){
+    if(frameCount % 120 == 0){
         keyPressed();
     }
     
+    if(frameCount % 10 == 0){
+    game.checkCollision();
+    }
 }
 
 

@@ -18,7 +18,8 @@ class Player {
 
     display(){
         image(this.playerImg, this.posX, this.posY);
-        image(this.speedImg, this.posX + 47, this.posY + 80, 7, 50);
+        image(this.speedImg, this.posX + 47, this.posY + 80, 7, 40);
+       
 
         if(keyIsDown(39)){
             image(this.playerRightImg, this.posX, this.posY);
@@ -29,7 +30,7 @@ class Player {
 
 
         for(let i = 0; i < this.shootArray.length; i++){
-            image(this.shootImg, this.shootArray[i].shootPosX, this.shootArray[i].shootPosY);
+            image(this.shootImg, this.shootArray[i].shootPosX, this.shootArray[i].shootPosY, this.shootArray[i].width, this.shootArray[i].heigth);
             this.shootArray[i].shootMove();
         }
     }

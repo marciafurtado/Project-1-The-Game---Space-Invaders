@@ -3,11 +3,13 @@ class Shoot {
     this.shootImg = loadImage("./imgElem/laserRed.png");
     this.shootPosX = posX;
     this.shootPosY = posY - 30;
+    this.height = 22;
+    this.width = 9;
     
   }
 
   shootMove() {
-    this.shootPosY -= 8;
+    this.shootPosY -= 6;
   }
 
 

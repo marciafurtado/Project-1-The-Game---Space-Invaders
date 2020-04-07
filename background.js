@@ -2,10 +2,6 @@ class Background {
     constructor(config){
         this.bgImg = loadImage('./imgBackground/backgroundColor.png');
         this.movingBgImage = [
-            {src: loadImage('./imgBackground/nebula.png'), x: 150, y:0, speed: 4.5},
-            {src: loadImage('./imgBackground/nebula.png'), x: 780, y:0, speed: 3.5},
-            {src: loadImage('./imgBackground/nebula.png'), x: 0, y:0,speed: 1},
-            {src: loadImage('./imgBackground/nebula.png'), x: 480, y:0, speed: 2.5},
 
             {src: loadImage('./imgBackground/starSmall.png'), x: 170, y:0,speed: 3.5},
             {src: loadImage('./imgBackground/starBig.png'), x: 290, y:0,speed: 3},           
@@ -38,8 +34,8 @@ class Background {
         this.movingBgImage[i].y += this.movingBgImage[i].speed;
         image(this.movingBgImage[i].src, this.movingBgImage[i].x, this.movingBgImage[i].y);
         // console.log(this.movingBgImage[i].y);
+        
         if(this.movingBgImage[i].y >= config.maxHeight) {     
-                
             this.movingBgImage[i].y = -200;
             console.log(this.movingBgImage[i].y);  
         }
