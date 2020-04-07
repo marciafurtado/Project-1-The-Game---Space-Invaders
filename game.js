@@ -6,7 +6,6 @@ class Game {
     init(config){
         this.background = new Background(config);
         this.player = new Player(config);
-        // this.obstacle = new Obstacles (config);
        
         this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'),200,200));
         this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 260, 200));

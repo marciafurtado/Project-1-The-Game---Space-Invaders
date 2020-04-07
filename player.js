@@ -14,6 +14,8 @@ class Player {
         
         this.shootArray = [];
 
+        this.ammo = 80;
+
     }
 
     display(){
@@ -44,7 +46,13 @@ class Player {
     }
 
     shootAction(){
+        if(this.ammo > 0){
         this.shootArray.push(new Shoot(this.posX + (this.sizeX / 2) - 5, this.posY));
+        this.ammo -= 1;
+        console.log(this.ammo);
+        } else if (this.ammo <= 0){
+            return 'Out of ammo!';
+        }
     }
 
     movement(){
