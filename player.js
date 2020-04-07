@@ -2,7 +2,10 @@ class Player {
 
     constructor(config){
         this.playerImg = loadImage('./imgElem/player.png');
-        this.shootImg = loadImage("./imgElem/laserRed.png");
+        this.playerRightImg = loadImage('./imgElem/playerRight.png');
+        this.playerLeftImg = loadImage('./imgElem/playerLeft.png');
+        this.shootImg = loadImage('./imgElem/laserRed.png');
+        this.speedImg = loadImage('./imgElem/speedLine.png');
 
         this.sizeX = 99;
         this.sizeY = 75;
@@ -15,6 +18,15 @@ class Player {
 
     display(){
         image(this.playerImg, this.posX, this.posY);
+        image(this.speedImg, this.posX + 47, this.posY + 80, 7, 50);
+
+        if(keyIsDown(39)){
+            image(this.playerRightImg, this.posX, this.posY);
+        }
+        if(keyIsDown(37)){
+            image(this.playerLeftImg, this.posX, this.posY);
+        }
+
 
         for(let i = 0; i < this.shootArray.length; i++){
             image(this.shootImg, this.shootArray[i].shootPosX, this.shootArray[i].shootPosY);
