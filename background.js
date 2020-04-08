@@ -1,10 +1,10 @@
 class Background {
     constructor(config){
         this.imgs = [
-            {src: loadImage('./imgBackground/Purple/T_PurpleBackground_Version3_Layer1.png'), x: 0, y: 0, speed: 1},
-            {src: loadImage('./imgBackground/Purple/T_PurpleBackground_Version3_Layer2.png'), x: 0, y: 0, speed: 2},
-            {src: loadImage('./imgBackground/Purple/T_PurpleBackground_Version3_Layer3.png'), x: 0, y: 0, speed: 3},
-            {src: loadImage('./imgBackground/Purple/T_PurpleBackground_Version3_Layer4.png'), x: 0, y: 0, speed: 4}
+            {src: loadImage('./imgBackground/T_PurpleBackground_Version3_Layer1.png'), x: 0, y: 0, speed: 1},
+            {src: loadImage('./imgBackground/T_PurpleBackground_Version3_Layer2.png'), x: 0, y: 0, speed: 2},
+            {src: loadImage('./imgBackground/T_PurpleBackground_Version3_Layer3.png'), x: 0, y: 0, speed: 3},
+            {src: loadImage('./imgBackground/T_PurpleBackground_Version3_Layer4.png'), x: 0, y: 0, speed: 4}
         ];
     }
 

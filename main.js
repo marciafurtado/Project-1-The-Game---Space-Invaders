@@ -3,7 +3,7 @@ let game = new Game();
 
 const config = {
     maxWidth: 768,
-    maxHeight: 1536
+    maxHeight: 1024,
 };
 
 

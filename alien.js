@@ -3,11 +3,11 @@ class Alien {
         this.img = img;
         this.posX = posX;
         this.posY = posY;
-        this.width = 42;
-        this.height = 41;
+        this.width = 32;
+        this.height = 31;
         this.initialPosX = posX;
-        this.velocityX = 40;
-        this.velocityY = -30;       
+        this.velocityX = 20;
+        this.velocityY = -15;       
     }
 
     drawAlien(){
@@ -18,11 +18,11 @@ class Alien {
         this.posX += this.velocityX;
         this.posY -= this.velocityY;
 
-        if(this.posX >= this.initialPosX + this.width){
+        if(this.posX >= this.initialPosX + this.width * 3){
         this.velocityX *= -1;
-        } else if(this.posX <= this.initialPosX - this.width){
+        } else if(this.posX <= this.initialPosX - this.width * 3){
         this.velocityX *= -1;
         } 
-        if(this.posY > 1536) game.finished = true;                 
+        if(this.posY > 1024) game.finished = true;                 
     }
 }
