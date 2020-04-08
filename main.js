@@ -1,40 +1,39 @@
 let game = new Game();
-let startScreen = false;
+
 
 const config = {
-    maxWidth: 1000,
-    maxHeight: 1400
+    maxWidth: 768,
+    maxHeight: 1536
 };
 
 
-function preload() {
+function preload() {  
     game.init(config);
+    
 }
 
 function setup() {
     createCanvas(config.maxWidth,config.maxHeight);
 }
 
-function draw() {
-
-    if(startScreen){ 
-        // insert start screen
-        return;
-    }
+function draw() {  
     game.display();
     game.player.movement();
     game.displayAliens();
+    game.draw();
+
+    if(frameCount % 30 == 0){
     game.alienMovimentation();
+    }
 
     if(frameCount % 120 == 0){
         keyPressed();
     }
     
     if(frameCount % 10 == 0){
-    game.checkCollision();
+    game.checkCollision();  
     }
 }
-
 
 function keyPressed() {   
     if(keyIsDown(32)){

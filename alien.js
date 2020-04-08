@@ -3,10 +3,11 @@ class Alien {
         this.img = img;
         this.posX = posX;
         this.posY = posY;
-        this.width = 52;
-        this.height = 51;
+        this.width = 42;
+        this.height = 41;
         this.initialPosX = posX;
-        this.velocity = 3;       
+        this.velocityX = 40;
+        this.velocityY = -30;       
     }
 
     drawAlien(){
@@ -14,19 +15,14 @@ class Alien {
     }
  
     moveAlien(){
-        this.posX += this.velocity;
+        this.posX += this.velocityX;
+        this.posY -= this.velocityY;
 
-        if(this.posX >= this.initialPosX + 150){
-            this.velocity *= -1;
-        } else if(this.posX <= this.initialPosX - 150){
-            this.velocity *= -1;
-        }
+        if(this.posX >= this.initialPosX + this.width){
+        this.velocityX *= -1;
+        } else if(this.posX <= this.initialPosX - this.width){
+        this.velocityX *= -1;
+        } 
+        if(this.posY > 1536) game.finished = true;                 
     }
-
-    // for(let i = 0; i < this.movingBgImage.length; i++){
-        //     this.movingBgImage[i].y += this.movingBgImage[i].speed;
-        //     image(this.movingBgImage[i].src, this.movingBgImage[i].x, this.movingBgImage[i].y);
-        //     // console.log(this.movingBgImage[i].y);
-            
-
 }

@@ -6,13 +6,18 @@ class Player {
         this.leftImg = loadImage('./imgElem/playerLeft.png');
         this.shootImg = loadImage('./imgElem/laserRed.png');
         this.speedImg = loadImage('./imgElem/speedLine.png');
-
-        this.sizeX = 99;
-        this.sizeY = 75;
-        this.posX = (config.maxWidth - this.sizeX)  / 2;
-        this.posY = (config.maxHeight - this.sizeY) - 50;
+        this.lifeImg = loadImage('./imgElem/life.png');
+        this.lifeImgWidth = 48;
+        this.lifeImgHeight = 40;
+        
+        this.width = 99;
+        this.height = 75;
+        this.posX = (config.maxWidth - this.width)  / 2;
+        this.posY = (config.maxHeight - this.height) - 50;
         
         this.shootArray = [];
+
+        this.lifeCounter = 3;
 
         this.ammo = 70;
     }
@@ -20,6 +25,11 @@ class Player {
     display(){
         image(this.img, this.posX, this.posY);
         image(this.speedImg, this.posX + 47, this.posY + 80, 7, 40);
+
+        fill('rgba(220, 220, 220,1)');
+        textSize(30);
+        text(`x ${this.lifeCounter}`, 680, 80);
+        image(this.lifeImg, 620, 50, this.lifeImgWidth, this.lifeImgHeight); 
        
         if(keyIsDown(39)){
             image(this.rightImg, this.posX, this.posY);
@@ -29,7 +39,7 @@ class Player {
         }
 
         for(let i = 0; i < this.shootArray.length; i++){
-            image(this.shootImg, this.shootArray[i].shootPosX, this.shootArray[i].shootPosY, this.shootArray[i].width, this.shootArray[i].heigth);
+            image(this.shootImg, this.shootArray[i].shootPosX, this.shootArray[i].shootPosY, this.shootArray[i].width, this.shootArray[i].height);
             this.shootArray[i].shootMove();
         }
     }
@@ -45,7 +55,7 @@ class Player {
     shootAction(){
 
         if(this.ammo > 0){
-        this.shootArray.push(new Shoot(this.posX + (this.sizeX / 2) - 5, this.posY));
+        this.shootArray.push(new Shoot(this.posX + (this.width / 2) - 5, this.posY));
         this.ammo -= 1;
         console.log(this.ammo);
             } else if (this.ammo <= 0){

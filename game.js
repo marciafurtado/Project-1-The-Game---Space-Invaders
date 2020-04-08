@@ -1,84 +1,97 @@
 class Game {
     constructor(){
+        this.start = false;
         this.alienArray = [];
-        this.alienSpeed = 3;
+
+        this.finished = false;
     }
 
     init(config){
         this.background = new Background(config);
         this.player = new Player(config);
        
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'),200,200));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 260, 200));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'),320,200));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 380, 200));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'),440,200));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'),500,200));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 560, 200));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 620, 200));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 680, 200));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 740, 200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'),100,200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 160, 200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 220,200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 280, 200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 340,200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 400,200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 460, 200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 520, 200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 580, 200));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 640, 200));
         
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),200,260));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 260, 260));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),320,260));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 380, 260));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),440,260));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 500, 260));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),560,260));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 620, 260));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),680,260));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 740, 260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),100,260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 160, 260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),220,260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 280, 260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),340,260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 400, 260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),460,260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 520, 260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),580,260));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 640, 260));
         
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'),200,320));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 260, 320));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'),320,320));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 380, 320));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'),440,320));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'),500,320));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'), 560, 320));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 620, 320));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'), 680, 320));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 740, 320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'),100,320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 160, 320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'),220,320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 280, 320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'),340,320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'),400,320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'), 460, 320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 520, 320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBeige_manned.png'), 580, 320));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 640, 320));
         
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),200,380));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 260, 380));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),320,380));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 380, 380));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),440,380));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 500, 380));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),560,380));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 620, 380));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),680,380));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 740, 380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),100,380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 160, 380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),220,380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 280, 380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),340,380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 400, 380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),460,380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 520, 380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),580,380));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 640, 380));
 
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'),200,440));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 260, 440));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'),320,440));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 380, 440));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'),440,440));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'),500,440));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 560, 440));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 620, 440));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 680, 440));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 740, 440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 100,440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 160, 440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 220,440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 280, 440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 340,440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 400,440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 460, 440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 520, 440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipGreen_manned.png'), 580, 440));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipBlue_manned.png'), 640, 440));
         
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),200,500));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 260, 500));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),320,500));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 380, 500));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),440,500));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 500, 500));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),560,500));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 620, 500));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),680,500));
-        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 740, 500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),100,500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 160, 500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),220,500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 280, 500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'),340,500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 400, 500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'), 460,500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 520, 500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipPink_manned.png'), 580,500));
+        this.alienArray.push(new Alien(loadImage('./Aliens/shipYellow_manned.png'), 640, 500));
     }
 
     display(){
         clear();
         this.background.display();
         this.player.display();
+
+        
+    }
+
+    draw(){
+        if(this.finished){
+            fill('black');
+            textSize(20);
+            text('Game Over', 500, 500);       
+            noLoop();
+        }
     }
 
     displayAliens(){
@@ -91,9 +104,6 @@ class Game {
     alienMovimentation(){
         for(let i = 0; i < this.alienArray.length; i++){
             this.alienArray[i].moveAlien();
-            // if(this.alienArray.length < 55){
-            //     this.alienArray[i].velocity += 1;
-            // }
         }
     }
 
@@ -112,11 +122,19 @@ class Game {
                         this.alienArray.splice(index, 1);
                         let laserIndex = this.player.shootArray.indexOf(laser);
                         this.player.shootArray.splice(laserIndex, 1);
-                    }
-
+                        
+                        if(this.alienArray.length % 10 === 0){
+                            for(let k = 0; k < this.alienArray.length; k++){
+                            this.alienArray[k].velocityY -= 50;
+                            this.alienArray[k].velocityX += 30;
+                            }
+                        }
+                }
             }
         }
 
     }
+
+    
    
 }
