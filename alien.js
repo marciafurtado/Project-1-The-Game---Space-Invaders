@@ -27,8 +27,10 @@ class Alien {
     
         if(this.posY > 1024 && game.player.lifeCounter <= 1){
             game.finished = true;
+            game.gameOverSound.play();
         } else if(this.posY > 1024){
             game.player.lifeCounter -= 1;
+            game.dyingSound.play();
            for(let i = 0; i < game.alienArray.length; i++){
                 game.alienArray[i].posY = game.alienArray[i].initialPosY;
            }

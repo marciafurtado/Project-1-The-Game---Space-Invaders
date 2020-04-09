@@ -1,16 +1,19 @@
 let game = new Game();
 
+
 const config = {
     maxWidth: 768,
     maxHeight: 1024,
 };
 
 function preload() {  
-    game.init(config);   
+    game.init(config);
+    game.inGameSounds();  
 }
 
 function setup() {
     createCanvas(config.maxWidth,config.maxHeight);
+    game.sound.play();
 }
 
 function draw() {  
@@ -31,6 +34,7 @@ function draw() {
         image(game.pressTabImg, 0, 800, 768, 72);
         image(game.congratulation, 0, 500, 768, 186);
         game.winScreenGif();
+        game.winSound.play();
         noLoop();
 
         return;   

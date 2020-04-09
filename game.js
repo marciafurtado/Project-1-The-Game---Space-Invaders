@@ -104,6 +104,7 @@ class Game {
           this.alienArray.splice(index, 1);
           let laserIndex = this.player.shootArray.indexOf(laser);
           this.player.shootArray.splice(laserIndex, 1);
+          this.laserSound.play();
 
           if (this.alienArray.length % 5 === 0) {
             for (let k = 0; k < this.alienArray.length; k++) {
@@ -129,4 +130,14 @@ class Game {
   loseScreenGif() {
     this.loseGif.show();
   }
+  inGameSounds(){
+    this.sound = loadSound('Music/videogameland.wav');
+    this.laserSound = loadSound('Music/lasershoot.wav');
+    this.dyingSound = loadSound('Music/diesound.wav');
+    this.gameOverSound = loadSound('Music/gameover.wav');
+    this.winSound = loadSound('Music/cheer.mp3');
+  }
+  
+
 }
+
