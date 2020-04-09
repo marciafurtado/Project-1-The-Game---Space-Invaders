@@ -9,6 +9,7 @@ const config = {
 
 function preload() {  
     game.init(config);
+
     
 }
 
@@ -17,6 +18,17 @@ function setup() {
 }
 
 function draw() {  
+    if(!game.start){
+        image(game.startImg1, 0, 0);
+
+        fill('rgba(220, 220, 220,1)');
+        textSize(40);
+        text('SPACE INVADERS 2.0', 170, 100);
+        text('Press enter key to start game', 140, 500);
+        return;
+    } 
+    game.draw();
+
     game.display();
     game.player.movement();
     game.displayAliens();
@@ -39,4 +51,13 @@ function keyPressed() {
     if(keyIsDown(32)){
         game.player.shootAction();
     }
+    
+    if(keyCode === 13){
+        game.start = true;
+    }
+
+    if(keyCode === 9 && game.finished === true){
+        window.location.reload();
+    }
 }
+
