@@ -11,7 +11,14 @@ class Game {
         this.background = new Background(config);
         this.player = new Player(config);
 
-        this.startImg = loadImage('./Background-Official/black-background.png');
+        this.startImg = loadImage('./BackgroundOfficial/blackBackground.png');
+        this.gameOverImg = loadImage('./BackgroundOfficial/gameOver.png');
+        this.pressTabImg = loadImage('./BackgroundOfficial/Tab.png');
+        this.spaceInvadersTitle = loadImage('./BackgroundOfficial/spaceInvaders.png');
+
+        this.startGif = createImg('./Gifs/Start.gif').position(150, 200).hide();
+        this.winGif = createImg('./Gifs/Win.gif').position(150, 200).hide();
+        this.loseGif = createImg('/Gifs/Lose.gif').position(150, 200).hide();
         
         
         this.alienArray.push(new Alien(loadImage('./Aliens-official/alien-1_green.png'), 150,200));
@@ -68,17 +75,8 @@ class Game {
         clear();
         this.background.display();
         this.player.display();
-    
     }
 
-    draw(){
-        if(this.finished){
-            fill('black');
-            textSize(20);
-            text('Game Over', 500, 500);       
-            noLoop();
-        }
-    }
 
     displayAliens(){
         for(let i = 0; i < this.alienArray.length; i++){
@@ -109,9 +107,9 @@ class Game {
                         let laserIndex = this.player.shootArray.indexOf(laser);
                         this.player.shootArray.splice(laserIndex, 1);
                         
-                        if(this.alienArray.length % 10 === 0){
+                        if(this.alienArray.length % 5 === 0){
                             for(let k = 0; k < this.alienArray.length; k++){
-                            this.alienArray[k].velocityY -= 20;
+                            this.alienArray[k].velocityY -= 15;
                             this.alienArray[k].velocityX += 10;
                             }
                         }
@@ -121,15 +119,13 @@ class Game {
 
     }
 
-    // startScreenSetup(){
-    //     noCanvas();    
-    //     this.video = createVideo(['./Start Video/final_5e8e687ca441e300158acd72_413644.mp4'], vidLoad);
-    //     vid.size(650, 530);
-    // }
-    
-    // vidLoad(){
-    //     vid.loop();
-    //     vid.volume(0);
-    // }
-   
+    startScreenGif(){
+        this.startGif.show();
+    }
+    winScreenGif(){
+        this.winGif.show();
+    }
+    loseScreenGif(){
+        this.loseGif.show();
+    }
 }

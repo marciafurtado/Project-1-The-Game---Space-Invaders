@@ -1,8 +1,8 @@
 class Background {
     constructor(config){
         this.imgs = [
-            {src: loadImage('./Background-Official/black-background.png'), x: 0, y: 0, speed: 0},
-            {src: loadImage('./Background-Official/background-layer2.png'), x: 0, y: 0, speed: 2},
+            {src: loadImage('./BackgroundOfficial/blackBackground.png'), x: 0, y: 0, speed: 0},
+            {src: loadImage('./BackgroundOfficial/backgroundLayer2.png'), x: 0, y: 0, speed: 2},
             
         ];
     }
