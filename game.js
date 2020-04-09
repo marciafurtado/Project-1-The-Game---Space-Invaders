@@ -11,7 +11,7 @@ class Game {
         this.background = new Background(config);
         this.player = new Player(config);
 
-        this.startImg1 = loadImage('./Background-Official/black-background.png');
+        this.startImg = loadImage('./Background-Official/black-background.png');
         
         
         this.alienArray.push(new Alien(loadImage('./Aliens-Official/alien-1_green.png'), 150,200));

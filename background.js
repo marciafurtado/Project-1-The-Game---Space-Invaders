@@ -15,7 +15,7 @@ class Background {
             if(this.imgs[i].y >= height) {
                 this.imgs[i].y = 0;
             }
-        }
+        } 
     }
 
 }

@@ -19,12 +19,12 @@ function setup() {
 
 function draw() {  
     if(!game.start){
-        image(game.startImg1, 0, 0);
+        image(game.startImg, 0, 0);
 
         fill('rgba(220, 220, 220,1)');
         textSize(40);
         text('SPACE INVADERS 2.0', 170, 100);
-        text('Press enter key to start game', 140, 500);
+        text('Press ENTER key to start game', 110, 500);
         return;
     } 
     game.draw();

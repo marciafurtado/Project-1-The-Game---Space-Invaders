@@ -1,6 +1,6 @@
 class Shoot {
   constructor(posX, posY) {
-    this.shootImg = loadImage("./imgElem/laserRed.png");
+    this.shootImg = loadImage("./Player/Bullet.png");
     this.shootPosX = posX;
     this.shootPosY = posY - 30;
     this.height = 22;
