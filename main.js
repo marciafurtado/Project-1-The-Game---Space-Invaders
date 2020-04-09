@@ -19,35 +19,28 @@ function draw() {
         image(game.spaceInvadersTitle, 0, 50, 768, 86);
         game.startScreenGif();
         fill('white');
-        // textSize(60);
-        // text('SPACE INVADERS', 130, 100); 
         textSize(20);
         text('Use your arrow keys to move your spaceship', 180, 800);
         text('Press spacebar to shoot', 270, 830);
         
-
-        return;    
+        return;        
     } 
 
-    if(game.finished && game.alienArray == 0){
+    if(game.finished && game.alienArray.length == 0){
         image(game.startImg, 0, 0);
+        image(game.pressTabImg, 0, 800, 768, 72);
+        image(game.congratulation, 0, 500, 768, 186);
         game.winScreenGif();
-        fill('white');
-        textSize(40);
-        text('Congratulations! You killed all the aliens!', 180, 800); 
-        textSize(20);
-        text('Press Tab key if you wanna play again', 180, 830);      
         noLoop();
-        return;
-    } else if(game.finished){
+
+        return;   
+    } else if(game.finished || game.player.ammo <= 0){
         image(game.startImg, 0, 0);
         image(game.gameOverImg, 110, 50);
         image(game.pressTabImg, 0, 800, 768, 72);
         game.loseScreenGif();
-        // fill('white');
-        // textSize(40);
-        // text('Press Tab key if you wanna play again', 180, 800, 768, 72);
         noLoop();
+
         return;
     }
 
