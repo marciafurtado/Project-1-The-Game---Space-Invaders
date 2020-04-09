@@ -108,7 +108,7 @@ class Game {
 
           if (this.alienArray.length % 5 === 0) {
             for (let k = 0; k < this.alienArray.length; k++) {
-              this.alienArray[k].velocityY -= 15;
+              this.alienArray[k].velocityY -= 10;
               this.alienArray[k].velocityX += 3;
             }
           }

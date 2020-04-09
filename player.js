@@ -16,7 +16,7 @@ class Player {
 
         this.lifeCounter = 3;
 
-        this.ammo = 70 ;
+        this.ammo = 80;
     }
 
     display(){
@@ -53,9 +53,6 @@ class Player {
         if(this.ammo > 0){
         this.shootArray.push(new Shoot(this.posX + (this.width / 2), this.posY));
         this.ammo -= 1;
-        console.log(this.ammo);
-            } else if (this.ammo <= 0){
-            return 'Out of ammo!';
         }
     }
 
