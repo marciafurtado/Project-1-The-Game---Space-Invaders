@@ -11,7 +11,7 @@ class Game {
 
     this.startImg = loadImage("BackgroundOfficial/blackBackground.png");
     this.gameOverImg = loadImage("BackgroundOfficial/gameOver.png");
-    this.pressTabImg = loadImage("BackgroundOfficial/Tab.png");
+    this.pressAImg = loadImage("BackgroundOfficial/akey.png");
     this.spaceInvadersTitle = loadImage("BackgroundOfficial/spaceInvaders.png");
     this.congratulation = loadImage("BackgroundOfficial/congrats.png");
 
