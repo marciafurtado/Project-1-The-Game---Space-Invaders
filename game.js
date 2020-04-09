@@ -20,13 +20,13 @@ class Game {
     this.loseGif = createImg("Gifs/Lose.gif").position(150, 200).hide();
 
     this.alienArray.push(
-      new Alien(loadImage("Aliens-official/alien-1_green.png"), 150, 200)
+      new Alien(loadImage("aliensofficial/alien-1_green.png"), 150, 200)
     );
     this.alienArray.push(
-      new Alien(loadImage("Aliens-official/alien-2_pink.png"), 200, 200)
+      new Alien(loadImage("aliensofficial/alien-2_pink.png"), 200, 200)
     );
     this.alienArray.push(
-      new Alien(loadImage("Aliens-official/alien-3_red.png"), 250, 200)
+      new Alien(loadImage("aliensofficial/alien-3_red.png"), 250, 200)
     );
     // this.alienArray.push(new Alien(loadImage('./Aliens-official/alien-4_yellow.png'), 300, 200));
     // this.alienArray.push(new Alien(loadImage('./Aliens-official/alien-5_blue.png'), 350,200));
