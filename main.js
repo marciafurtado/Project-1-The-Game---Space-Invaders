@@ -33,7 +33,7 @@ function draw() {
     image(game.congratulation, 0, 500, 768, 186);
     game.winScreenGif();
     game.winSound.play();
-    game.winSound.setVolume(0.4);
+    game.winSound.setVolume(0.01);
     noLoop();
 
     return;
@@ -43,6 +43,7 @@ function draw() {
     image(game.pressAImg, 0, 800, 768, 90);
     game.loseScreenGif();
     game.gameOverSound.play();
+    game.gameOverSound.setVolume(0.01);
     noLoop();
 
     return;
@@ -58,7 +59,7 @@ function draw() {
   if (frameCount % 120 == 0) {
     keyPressed();
   }
-  if (frameCount % 10 == 0) {
+  if (frameCount % 5 == 0) {
     game.checkCollision();
   }
 }

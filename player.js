@@ -16,7 +16,7 @@ class Player {
 
         this.lifeCounter = 3;
 
-        this.ammo = 80;
+        this.ammo = 70;
     }
 
     display(){

@@ -18,7 +18,7 @@ class Alien {
     moveAlien(){
         this.posX += this.velocityX;
         this.posY -= this.velocityY;
-
+        console.log(this.velocityX);
         if(this.posX >= this.initialPosX + this.width * 3){
         this.velocityX *= -1;
         } else if(this.posX <= this.initialPosX - this.width * 3){
@@ -30,6 +30,7 @@ class Alien {
             game.gameOverSound.play();
         } else if(this.posY > 1024){
             game.player.lifeCounter -= 1;
+            game.dyingSound.setVolume(0.01);
             game.dyingSound.play();
            for(let i = 0; i < game.alienArray.length; i++){
                 game.alienArray[i].posY = game.alienArray[i].initialPosY;

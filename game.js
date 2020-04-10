@@ -15,7 +15,7 @@ class Game {
     this.spaceInvadersTitle = loadImage("BackgroundOfficial/spaceInvaders.png");
     this.congratulation = loadImage("BackgroundOfficial/congrats.png");
 
-    this.startGif = createImg("Gifs/Start.gif").position(150, 200).hide();
+    this.startGif = createImg("Gifs/Start.gif").position( 150, 200).hide();
     this.winGif = createImg("Gifs/Win.gif").position(150, 200).hide();
     this.loseGif = createImg("Gifs/Lose.gif").position(150, 200).hide();
 
@@ -77,7 +77,6 @@ class Game {
   displayAliens() {
     for (let i = 0; i < this.alienArray.length; i++) {
       this.alienArray[i].drawAlien();
-      console.log([i]);
     }
   }
 
@@ -104,12 +103,17 @@ class Game {
           this.alienArray.splice(index, 1);
           let laserIndex = this.player.shootArray.indexOf(laser);
           this.player.shootArray.splice(laserIndex, 1);
+          this.laserSound.setVolume(0.01);
           this.laserSound.play();
 
           if (this.alienArray.length % 5 === 0) {
             for (let k = 0; k < this.alienArray.length; k++) {
               this.alienArray[k].velocityY -= 10;
-              this.alienArray[k].velocityX += 3;
+              if(this.alienArray[k].velocityX > 0){
+              this.alienArray[k].velocityX += 4;
+              } else {
+              this.alienArray[k].velocityX -= 4;
+              }
             }
           }
 
@@ -136,7 +140,5 @@ class Game {
     this.gameOverSound = loadSound('Music/gameover.wav');
     this.winSound = loadSound('Music/cheer.mp3');
   }
-  
-
 }
 
