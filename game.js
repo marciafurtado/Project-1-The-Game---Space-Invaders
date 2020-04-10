@@ -131,7 +131,6 @@ class Game {
     this.loseGif.show();
   }
   inGameSounds(){
-    this.sound = loadSound('Music/videogameland.wav');
     this.laserSound = loadSound('Music/lasershoot.wav');
     this.dyingSound = loadSound('Music/diesound.wav');
     this.gameOverSound = loadSound('Music/gameover.wav');

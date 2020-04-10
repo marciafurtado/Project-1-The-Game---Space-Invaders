@@ -3,8 +3,8 @@ class Alien {
         this.img = img;
         this.posX = posX;
         this.posY = posY;
-        this.width = 35;
-        this.height = 34;
+        this.width = 37;
+        this.height = 36;
         this.initialPosX = posX;
         this.initialPosY = posY;
         this.velocityX = 10;

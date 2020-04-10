@@ -12,7 +12,6 @@ function preload() {
 
 function setup() {
   createCanvas(config.maxWidth, config.maxHeight);
-  game.sound.play();
 }
 
 function draw() {
@@ -34,10 +33,11 @@ function draw() {
     image(game.congratulation, 0, 500, 768, 186);
     game.winScreenGif();
     game.winSound.play();
+    game.winSound.setVolume(0.4);
     noLoop();
 
     return;
-  } else if (game.finished || game.player.ammo <= 0) {
+  } else if (game.finished || game.player.ammo < 0) {
     image(game.startImg, 0, 0);
     image(game.gameOverImg, 110, 50);
     image(game.pressAImg, 0, 800, 768, 90);
