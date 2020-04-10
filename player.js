@@ -50,8 +50,10 @@ class Player {
 
     shootAction(){
 
-        if(this.ammo > 0){
+        if(this.ammo > 0){   
         this.shootArray.push(new Shoot(this.posX + (this.width / 2), this.posY));
+        game.laserSound.setVolume(0.01);
+        game.laserSound.play();
         this.ammo -= 1;
         }
     }

@@ -67,6 +67,7 @@ function draw() {
 function keyPressed() {
   if (keyIsDown(32)) {
     game.player.shootAction();
+  
   }
   if (keyCode === 13) {
     game.start = true;

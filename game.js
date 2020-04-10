@@ -103,16 +103,16 @@ class Game {
           this.alienArray.splice(index, 1);
           let laserIndex = this.player.shootArray.indexOf(laser);
           this.player.shootArray.splice(laserIndex, 1);
-          this.laserSound.setVolume(0.01);
-          this.laserSound.play();
-
+          this.explosionSound.setVolume(0.01);
+          this.explosionSound.play();
+         
           if (this.alienArray.length % 5 === 0) {
             for (let k = 0; k < this.alienArray.length; k++) {
               this.alienArray[k].velocityY -= 10;
               if(this.alienArray[k].velocityX > 0){
-              this.alienArray[k].velocityX += 4;
+              this.alienArray[k].velocityX += 5;
               } else {
-              this.alienArray[k].velocityX -= 4;
+              this.alienArray[k].velocityX -= 5;
               }
             }
           }
@@ -139,6 +139,7 @@ class Game {
     this.dyingSound = loadSound('Music/diesound.wav');
     this.gameOverSound = loadSound('Music/gameover.wav');
     this.winSound = loadSound('Music/cheer.mp3');
+    this.explosionSound = loadSound('Music/explosion.wav');
   }
 }
 
